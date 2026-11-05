@@ -301,9 +301,13 @@ bun run build    # rewrites gui-experimental.cjs
 2. Bump `version` in `package.json` and add a `CHANGELOG.md` entry.
 3. `npm pack --dry-run` — confirm `gui-experimental.cjs`, `server.js`, `status.js`, `rpc.js`,
    `README.md`, `LICENSE` and `CHANGELOG.md` are in the tarball.
-4. `git tag vX.Y.Z && git push --tags`
-5. `npm publish`
-6. Create a GitHub release from the tag.
+4. Commit, then `git tag vX.Y.Z && git push origin main --tags`. The `publish` workflow publishes to
+   npm with Trusted Publishing (OIDC) and attaches a provenance statement — no `NPM_TOKEN` secret.
+5. Create a GitHub release from the tag.
+
+Trusted Publishing is configured once per package on npmjs.com under **Package settings → Publishing
+access → Trusted publisher** (owner `dondonudon`, repository `opencode-pr-pill`, workflow
+`publish.yml`). Until it is registered, publish the first release manually with `npm publish`.
 
 Commit `gui-experimental.cjs` so cloning and installing from Git works without a build step.
 

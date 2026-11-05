@@ -1,0 +1,38 @@
+name: publish
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  # Trusted Publishing: GitHub signs an OIDC assertion that npm verifies.
+  # No NPM_TOKEN secret and no 2FA code are involved.
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      # Trusted Publishing needs npm >= 11.5.1; Node 24 ships a compatible
+      # version, but pin the floor explicitly.
+      - run: npm install -g npm@latest
+
+      - run: bun install --frozen-lockfile
+      - run: bun run test
+      - run: bun run build
+
+      # No auth token: npm exchanges the GitHub OIDC token for publish rights.
+      # The trusted publisher must be registered on npmjs.com first
+      # (Package settings -> Publishing access -> Trusted publisher).
+      - run: npm publish --access public
