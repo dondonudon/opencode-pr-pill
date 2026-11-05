@@ -1,0 +1,12 @@
+{
+  "providers": {
+    "your-provider": {
+      "input": 0,
+      "output": 0
+    },
+    "unknown": {
+      "input": 0,
+      "output": 0
+    }
+  }
+}

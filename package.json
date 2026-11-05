@@ -1,0 +1,56 @@
+{
+  "name": "opencode-pr-pill",
+  "version": "0.3.0",
+  "type": "module",
+  "description": "OpenCode Desktop sidebar panel for the session's pull request: CI, review state, and watched PRs",
+  "keywords": ["opencode", "opencode-plugin", "github", "pull-request", "ci"],
+  "license": "MIT",
+  "author": {
+    "name": "Prasetyo Alvianto",
+    "url": "https://github.com/dondonudon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dondonudon/opencode-pr-pill.git"
+  },
+  "homepage": "https://github.com/dondonudon/opencode-pr-pill#readme",
+  "bugs": {
+    "url": "https://github.com/dondonudon/opencode-pr-pill/issues"
+  },
+  "engines": {
+    "opencode": ">=2.2.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./server.js",
+    "./rpc": "./rpc.js",
+    "./gui-experimental": "./gui-experimental.cjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "server.js",
+    "rpc.js",
+    "status.js",
+    "gui.tsx",
+    "gui-experimental.cjs",
+    "vite.config.ts",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "test": "node --test test/*.test.js",
+    "prepublishOnly": "vite build"
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.2.5"
+  },
+  "devDependencies": {
+    "solid-js": "^1.9.0",
+    "vite": "^7.0.0",
+    "vite-plugin-solid": "^2.11.0"
+  }
+}

@@ -1,0 +1,10 @@
+// Add this to ~/.config/opencode/opencode.jsonc.
+// The path is resolved relative to the config directory.
+{
+  "plugins": [
+    {
+      "package": "./local-plugins/pr-pill",
+      "options": {}
+    }
+  ]
+}
