@@ -7,9 +7,10 @@ All notable changes to `opencode-pr-pill` are documented here. This project foll
 
 ### Added
 
-- **Monitor** button on every PR row. It sends a queued prompt to the current session asking the
-  agent to start `pr_monitor` for that PR and keep working until the PR is ready. The button shows
-  `Requested` for five minutes, reports failures in an alert, and clears on cancel.
+- **Monitor** button on every PR row. It queues a prompt asking the current session to work the PR
+  to ready: it starts `pr_monitor` when the optional companion plugin is installed, and otherwise
+  checks CI, fixes failures, resolves review threads, pushes, and reports what remains. The button
+  shows `Requested` for five minutes, reports failures in an alert, and clears on cancel.
 - Confirmation dialog that explains the side effect before anything is sent.
 - `monitor.*` i18n strings.
 
