@@ -33,6 +33,5 @@ jobs:
       - run: bun run build
 
       # No auth token: npm exchanges the GitHub OIDC token for publish rights.
-      # The trusted publisher must be registered on npmjs.com first
-      # (Package settings -> Publishing access -> Trusted publisher).
-      - run: npm publish --access public
+      # The trusted publisher must allow `npm publish`, not just `npm stage publish`.
+      - run: npm publish --access public --provenance

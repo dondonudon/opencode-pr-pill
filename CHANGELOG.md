@@ -3,6 +3,18 @@
 All notable changes to `opencode-pr-pill` are documented here. This project follows
 [Semantic Versioning](https://semver.org/).
 
+## [0.3.1] — 2026-11-05
+
+### Changed
+
+- Releases publish from GitHub Actions through **Trusted Publishing** (OIDC) with a provenance
+  statement. No npm token or 2FA code is stored in the repository or CI.
+- README documents the release flow, and repeats that `@sesori/pr-monitor-opencode` is optional.
+
+### Fixed
+
+- Changelog wording for the **Monitor** fallback path.
+
 ## [0.3.0] — 2026-11-05
 
 ### Added

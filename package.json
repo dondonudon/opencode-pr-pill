@@ -1,6 +1,6 @@
 {
   "name": "opencode-pr-pill",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "description": "OpenCode Desktop sidebar panel for the session's pull request: CI, review state, and watched PRs",
   "keywords": ["opencode", "opencode-plugin", "github", "pull-request", "ci"],
